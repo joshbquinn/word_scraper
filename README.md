@@ -1,16 +1,38 @@
-"# word_scraper" 
+# Word Scraper 
 
-The program creates a bunch of lists to cross check a list containing all words from a specfied URL. 
-after cross checking the URL list of words with the common words, nouns, verbs, and keywords, the URL list is
-written to a text file and the found nouns and verbs are also written
-to text files. These are stored in a unique directory each time the program is run. 
+The program scrapes keywords, nouns and verbs from a URL and stores them in .txt files.
 
-The user can spicfiy what URL to pull the text from in the main 
-module. 
+- Creates a list of words from a specified URL.
+- Creates a unique directory (url name + datetime stamp) to store any .txt files.
+- Creates generic lists of common words, nouns and verbs to cross check the URL list against. 
+- Cleans up the URL list to remove unwanted elements (HTML, JavaScripts etc) and leave only the text. 
+- Cross checks the URL list of words against the common words, noun and verb lists.
+- Common words removed from URL list 
+- Matched noun and verb lists created 
+- Keyword, and noun and verb matches written to .txt files 
+- Files stored in a unique directory each time the program is run.
 
-Future changes:
-- Add classes 
+# Instructions 
+In the main module, the user can specify a URL to pull the text from.
+
+# Future changes
+
+Application Structure:
 - Modularise the files correctly
-- Add inheritance
-- Stronger regex functions to clean up URL list of words
+- Add classes
+- Add inheritance 
+- Ensure program is secured properly 
+- Implement OO Design Principles 
+
+
+Usability and functionality:
 - More generic usability across various URLs
+- More robust regex functions to clean up URL list of words
+
+
+UI: 
+- Simple frontend interface to add a URL to scrape from, display found keywords and option to download the .txt file.
+
+# Future Pipeline extensions
+- Browser testing 
+- Archive test results 
