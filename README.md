@@ -19,7 +19,7 @@ https://github.com/joshbquinn/word_scraper.git
 
 To run from command line:
 - navigate to application directory
-- enter command: py main.py <url string> # URL string must be between double quotes ("")
+- enter command: py main.py "url_string" # URL string must be between double quotes ("")
 - If a URL is not specified a default URL string will run. 
 
 # Future changes
