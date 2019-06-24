@@ -13,7 +13,14 @@ The program scrapes keywords, nouns and verbs from a URL and stores them in .txt
 - Files stored in a unique directory each time the program is run.
 
 # Instructions 
-In the main module, the user can specify a URL to pull the text from.
+
+Pipeline script from SCM: to configure the job in Jenkins Pipeline add the following git repo with default master branch:  
+https://github.com/joshbquinn/word_scraper.git
+
+To run from command line:
+- navigate to application directory
+- enter command: py main.py <url string> # URL string must be between double quotes ("")
+- If a URL is not specified a default URL string will run. 
 
 # Future changes
 

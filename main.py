@@ -1,6 +1,8 @@
 import directory_management as dm
 import file_management as fm
 import word_fetch as wf
+import create_word_check_lists as create_words
+import sys
 import re
 
 
@@ -54,5 +56,14 @@ def main(url):
 
 
 if __name__ == '__main__':
-    url = 'https://www.rte.ie/news/2019/0621/1056733-iceland-rockall/'
-    main(url)
+    create_words.main()
+
+    default_url = 'https://docs.python.org/3/howto/regex.html'
+    try:
+        user_url = sys.argv[1]
+        main(user_url)
+    except IndexError as e:
+        main(default_url)
+        print("No URL was specified in the command line. Default URL was used instead."
+              "\n sys.argv[] Index Error: {}".format(str(e)), file=sys.stderr)
+
