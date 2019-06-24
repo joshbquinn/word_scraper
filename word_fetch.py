@@ -50,16 +50,24 @@ def clean_url(items):
 
     url_string = ' '.join(items)
 
-    # scripts = re.compile(r'<script\s.*?/script>*.' or r'<noscript.*?/noscript>')
+    paragraphs = re.findall(r'<p>(.*?)</p>', url_string)
+    h_tags = re.findall(r'<h.*?>(.*?)</.*?h.*?>', url_string)
+
+    url_string = ' '.join(paragraphs + h_tags)
+
+    heads = re.compile(r'<he.*?>(.*?)</.*?he.*?>')
     scripts = re.compile(r'<script.*?/script>*.')
     style = re.compile(r'<style.*?/style>')
     specials = re.compile(r'[^A-Za-z0-9]+')
     remove_tags = re.compile(r'<.*?>')
+    remove_numbers = re.compile(r'(?<!\S)[+-]?\d+(?!\S)')
 
-    clean_string = re.sub(scripts, '', url_string)
+    clean_string = re.sub(heads, '', url_string)
+    clean_string = re.sub(scripts, '', clean_string)
     clean_string = re.sub(style, '', clean_string)
     clean_string = re.sub(remove_tags, '', clean_string)
     clean_string = re.sub(specials, ' ', clean_string)
+    clean_string = re.sub(remove_numbers, '', clean_string)
 
     clean_list = list(clean_string.split())
     return clean_list

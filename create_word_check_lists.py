@@ -1,16 +1,18 @@
 import word_fetch as wf
+import os
 
 
 def write_to_file(items, file_name):
 
-    f = open(file_name, 'w')
-    a_list = open(file_name, 'r')
-    a_list = a_list.read().split()
+    if not os.path.isfile(file_name):
+        f = open(file_name, 'w')
+        a_list = open(file_name, 'r')
+        a_list = a_list.read().split()
 
-    for item in items:
-        if item not in a_list:
-            f.write(item + '\n')
-    f.close()
+        for item in items:
+            if item not in a_list:
+                f.write(item + '\n')
+        f.close()
 
 
 def main():

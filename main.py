@@ -58,7 +58,7 @@ def main(url):
 if __name__ == '__main__':
     create_words.main()
 
-    default_url = 'https://docs.python.org/3/howto/regex.html'
+    default_url = 'https://www.bbc.com/news/world-middle-east-48742972'
     try:
         user_url = sys.argv[1]
         main(user_url)
