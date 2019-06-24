@@ -8,9 +8,9 @@ to text files. These are stored in a unique directory each time the program is r
 The user can spicfiy what URL to pull the text from in the main 
 module. 
 
-Future changes: 
+Future changes:
 - Add classes 
 - Modularise the files correctly
 - Add inheritance
-- Create stronger regex functions
+- Stronger regex functions to clean up URL list of words
 - More generic usability across various URLs

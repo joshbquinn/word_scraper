@@ -54,11 +54,11 @@ def clean_url(items):
     scripts = re.compile(r'<script.*?/script>*.')
     style = re.compile(r'<style.*?/style>')
     specials = re.compile(r'[^A-Za-z0-9]+')
-    clean = re.compile(r'<.*?>')
+    remove_tags = re.compile(r'<.*?>')
 
     clean_string = re.sub(scripts, '', url_string)
     clean_string = re.sub(style, '', clean_string)
-    clean_string = re.sub(clean, '', clean_string)
+    clean_string = re.sub(remove_tags, '', clean_string)
     clean_string = re.sub(specials, ' ', clean_string)
 
     clean_list = list(clean_string.split())
